@@ -6,17 +6,21 @@ using UnityEngine;
 public class aspectKeeper : MonoBehaviour
 {
     [SerializeField]
-    private Camera targetCamera; //対象とするカメラ
+    private Camera targetCamera = null; //対象とするカメラ
 
     [SerializeField]
     private Vector2 aspectVec; //目的解像度
 
-    void Update()
+    void Start()
     {
+        this.gameObject.transform.localScale = new Vector3(1, 1, 1);
         var screenAspect = Screen.width / (float)Screen.height; //画面のアスペクト比
         var targetAspect = aspectVec.x / aspectVec.y; //目的のアスペクト比
-
         var magRate = targetAspect / screenAspect; //目的アスペクト比にするための倍率
+        var sizeValue = Screen.width / aspectVec.x;
+        Debug.Log("縦の大きさ" + Screen.height + "横の大きさ" + Screen.width + "アスペクト比は" + magRate + "サイズ差は" + sizeValue);
+        this.gameObject.transform.localScale = gameObject.transform.localScale * sizeValue;
+
 
         var viewportRect = new Rect(0, 0, 1, 1); //Viewport初期値でRectを作成
 

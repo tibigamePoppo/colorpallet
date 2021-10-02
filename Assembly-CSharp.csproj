@@ -64,10 +64,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\System\HSVmode.cs" />
+    <Compile Include="Assets\Scripts\System\RGBmode.cs" />
+    <Compile Include="Assets\Scripts\System\SDmode.cs" />
+    <Compile Include="Assets\Scripts\System\TAmode.cs" />
+    <Compile Include="Assets\Scripts\System\closePanel.cs" />
+    <Compile Include="Assets\Scripts\System\randomImage.cs" />
+    <Compile Include="Assets\Scripts\System\result.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\Expanel.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\aspectKeeper.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\gameEnd.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\optionSystem.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\randomColor.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\rankingSystem.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\sceneLoad.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\selectMode.cs" />
+    <Compile Include="Assets\Scripts\UI\main\roundText.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Users/vivio/Desktop/unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -635,6 +647,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/ゲームクリエイトプロジェクト/colorPallet/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>D:/ゲームクリエイトプロジェクト/colorPallet/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>D:/ゲームクリエイトプロジェクト/colorPallet/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
@@ -678,7 +693,12 @@
       <HintPath>D:/ゲームクリエイトプロジェクト/colorPallet/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{761C85B7-7600-5A64-16BC-9ADEAEA5AE6F}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
