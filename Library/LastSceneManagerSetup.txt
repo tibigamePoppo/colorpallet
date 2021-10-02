@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TAmode.unity
+- path: Assets/Scenes/CMmode.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
