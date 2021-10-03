@@ -57,7 +57,6 @@ public class RGBmode : MonoBehaviour
                 answerBvalue = change255Value(Bvalue);
             }
         }
-        round.Value++;
         inputText();
     }
 
@@ -75,12 +74,12 @@ public class RGBmode : MonoBehaviour
     {
         if (value == answer)
         {
-            sendResult(true);
+            StartCoroutine("sendResult",true);
             correctAnswer++;
         }
         else
         {
-            sendResult(false);
+            StartCoroutine("sendResult", false);
         }
         if (round.Value == 10)
         {
@@ -88,8 +87,10 @@ public class RGBmode : MonoBehaviour
         }
     }
 
-    private void sendResult(bool value)
+    private IEnumerator sendResult(bool value)
     {
+        round.Value++;
+        yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
         result.GetComponent<result>().showReselt(value, resultColor);
     }

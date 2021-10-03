@@ -11,6 +11,7 @@ public class TAmode : MonoBehaviour
     [SerializeField]
     private Text problemText = null;
     public ReactiveProperty<int> correctAnswer = new ReactiveProperty<int>(0);
+    public ReactiveProperty<int> round = new ReactiveProperty<int>(0);
     private int FailureAnswer;
 
     Text correctText;
@@ -122,17 +123,19 @@ public class TAmode : MonoBehaviour
     {
         if (value == answer)
         {
-            sendResult(true);
+            StartCoroutine("sendResult", true);
             correctAnswer.Value++;
         }
         else
         {
-            sendResult(false);
+            StartCoroutine("sendResult", false);
         }
     }
 
-    private void sendResult(bool value)
+    private IEnumerator sendResult(bool value)
     {
+        round.Value++;
+        yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
         result.GetComponent<result>().showReselt(value, resultColor);
         if (value == false) FailureAnswer++;
@@ -161,6 +164,7 @@ public class TAmode : MonoBehaviour
 
     public void reset()
     {
+        round.Value = 0;
         correctAnswer.Value = 0;
         FailureAnswer = 0;
         time = 0;

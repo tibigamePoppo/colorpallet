@@ -13,6 +13,10 @@ public class result : MonoBehaviour
     private Image kekka = null;
     [SerializeField]
     private Image resultColor = null;
+    [SerializeField]
+    private Image resultColorA1 = null;
+    [SerializeField]
+    private Image resultColorA2 = null;
 
     public void showReselt(bool result,Color color)
     {
@@ -21,5 +25,16 @@ public class result : MonoBehaviour
         else
             kekka.sprite = husekai;
         resultColor.color = color;
+    }
+
+    public void CMShowReselt(bool result, Color color, Color colorA1, Color colorA2)
+    {
+        if (result == true)
+            kekka.sprite = sekai;
+        else
+            kekka.sprite = husekai;
+        resultColor.color = color;
+        resultColorA1.color = colorA1;
+        resultColorA2.color = colorA2;
     }
 }

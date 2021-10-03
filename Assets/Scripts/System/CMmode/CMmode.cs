@@ -22,6 +22,10 @@ public class CMmode : MonoBehaviour
     int answer1;
     int answer2;
 
+
+    Color answer1Color;
+    Color answer2Color;
+
     int selectAnswer1;
     int selectAnswer2;
 
@@ -49,6 +53,7 @@ public class CMmode : MonoBehaviour
         answerRvalue = 0;
         answerGvalue = 0;
         answerBvalue = 0;
+
         for (int i = 0; i < 4; i++)
         {
             float Rvalue = Random.Range(0.0f, 1.0f);
@@ -58,19 +63,25 @@ public class CMmode : MonoBehaviour
             anserImages[i].color = new Color(Rvalue, Gvalue, Bvalue, 1);
             if (i == answer1 || i == answer2)
             {
-                resultColor = new Color(Rvalue, Gvalue, Bvalue, 1);
                 answerRvalue += change255Value(Rvalue);
                 answerGvalue += change255Value(Gvalue);
                 answerBvalue += change255Value(Bvalue);
-
+                if(i ==answer1)
+                {
+                    answer1Color = new Color(Rvalue, Gvalue, Bvalue, 1);
+                }
+                else
+                {
+                    answer2Color = new Color(Rvalue, Gvalue, Bvalue, 1);
+                }
             }
         }
+        resultColor = answer1Color + answer2Color;
         if (answerRvalue >= 256 || answerGvalue >= 256 || answerBvalue >= 256)
         {
             makeProblem();
             return;
         }
-        round.Value++;
         inputText();
 
     }
@@ -99,13 +110,13 @@ public class CMmode : MonoBehaviour
         {
             if (selectAnswer2 == answer1 || selectAnswer2 == answer2)
             {
-                sendResult(true);
+                StartCoroutine("sendResult", true);
                 correctAnswer++;
             }
         }
         else
         {
-            sendResult(false);
+            StartCoroutine("sendResult", false);
         }
         if (round.Value == 10)
         {
@@ -113,10 +124,12 @@ public class CMmode : MonoBehaviour
         }
     }
 
-    private void sendResult(bool value)
+    private IEnumerator sendResult(bool value)
     {
+        round.Value++;
+        yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
-        result.GetComponent<result>().showReselt(value, resultColor);
+        result.GetComponent<result>().CMShowReselt(value, resultColor,answer1Color,answer2Color);
     }
 
     public void nextGame()

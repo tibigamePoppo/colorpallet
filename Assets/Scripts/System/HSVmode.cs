@@ -57,7 +57,6 @@ public class HSVmode : MonoBehaviour
                 answerVvalue = change100Value(Vvalue);
             }
         }
-        round.Value++;
         inputText();
     }
 
@@ -79,12 +78,12 @@ public class HSVmode : MonoBehaviour
     {
         if (value == answer)
         {
-            sendResult(true);
+            StartCoroutine("sendResult", true);
             correctAnswer++;
         }
         else
         {
-            sendResult(false);
+            StartCoroutine("sendResult", false);
         }
         if (round.Value == 10)
         {
@@ -92,8 +91,10 @@ public class HSVmode : MonoBehaviour
         }
     }
 
-    private void sendResult(bool value)
+    private IEnumerator sendResult(bool value)
     {
+        round.Value++;
+        yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
         result.GetComponent<result>().showReselt(value, resultColor);
     }

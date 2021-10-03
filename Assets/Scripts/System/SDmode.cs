@@ -12,6 +12,7 @@ public class SDmode : MonoBehaviour
     private Text problemText = null;
     private Text timeCount;
     public ReactiveProperty<int> correctAnswer = new ReactiveProperty<int>(0);
+    public ReactiveProperty<int> round = new ReactiveProperty<int>(0);
 
     Text correctText;
 
@@ -117,7 +118,7 @@ public class SDmode : MonoBehaviour
     {
         if (value == answer)
         {
-            sendResult(true);
+            StartCoroutine("sendResult", true);
             correctAnswer.Value++;
         }
         else
@@ -128,8 +129,10 @@ public class SDmode : MonoBehaviour
         }
     }
 
-    private void sendResult(bool value)
+    private IEnumerator sendResult(bool value)
     {
+        round.Value++;
+        yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
         result.GetComponent<result>().showReselt(value, resultColor);
     }
@@ -142,6 +145,7 @@ public class SDmode : MonoBehaviour
 
     public void reset()
     {
+        round.Value = 0;
         correctAnswer.Value = 0;
         makeProblem();
         result_f.SetActive(false);
