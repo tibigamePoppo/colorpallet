@@ -64,13 +64,14 @@
     <Compile Include="Assets\Scripts\UI\Tittle\randomColor.cs" />
     <Compile Include="Assets\Scripts\System\randomImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\optionSystem.cs" />
+    <Compile Include="Assets\Scripts\System\CMmode\dragImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\selectMode.cs" />
+    <Compile Include="Assets\Scripts\System\CMmode\CMmode.cs" />
     <Compile Include="Assets\Scripts\System\TAmode.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\sceneLoad.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\Expanel.cs" />
     <Compile Include="Assets\Scripts\System\closePanel.cs" />
-    <Compile Include="Assets\Scripts\System\CMmode\dragImage.cs" />
-    <Compile Include="Assets\Scripts\System\CMmode\CMmode.cs" />
+    <Compile Include="Assets\Scripts\UI\main\spinImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
