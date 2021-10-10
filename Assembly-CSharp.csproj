@@ -54,9 +54,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\Tittle\gameEnd.cs" />
-    <Compile Include="Assets\Scripts\System\HSVmode.cs" />
-    <Compile Include="Assets\Scripts\System\RGBmode.cs" />
-    <Compile Include="Assets\Scripts\System\SDmode.cs" />
+    <Compile Include="Assets\Scripts\System\HSVmode\HSVmode.cs" />
+    <Compile Include="Assets\Scripts\System\RGBmode\RGBmode.cs" />
+    <Compile Include="Assets\Scripts\System\SDmode\SDmode.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\aspectKeeper.cs" />
     <Compile Include="Assets\Scripts\System\result.cs" />
     <Compile Include="Assets\Scripts\UI\main\roundText.cs" />
@@ -67,11 +67,13 @@
     <Compile Include="Assets\Scripts\System\CMmode\dragImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\selectMode.cs" />
     <Compile Include="Assets\Scripts\System\CMmode\CMmode.cs" />
-    <Compile Include="Assets\Scripts\System\TAmode.cs" />
+    <Compile Include="Assets\Scripts\System\TAmode\TAmode.cs" />
+    <Compile Include="Assets\Scripts\UI\main\spinImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\sceneLoad.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\Expanel.cs" />
     <Compile Include="Assets\Scripts\System\closePanel.cs" />
-    <Compile Include="Assets\Scripts\UI\main\spinImage.cs" />
+    <Compile Include="Assets\Scripts\System\colorPallet\colorPallet.cs" />
+    <Compile Include="Assets\Scripts\System\colorPallet\changeImageColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

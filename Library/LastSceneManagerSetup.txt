@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Titile.unity
+- path: Assets/Scenes/RGBmode.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

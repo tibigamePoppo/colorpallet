@@ -127,9 +127,9 @@ public class CMmode : MonoBehaviour
     private IEnumerator sendResult(bool value)
     {
         round.Value++;
+        result.GetComponent<result>().CMShowReselt(value, resultColor, answer1Color, answer2Color);
         yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
-        result.GetComponent<result>().CMShowReselt(value, resultColor,answer1Color,answer2Color);
     }
 
     public void nextGame()
