@@ -11,8 +11,10 @@ public class randomColor : MonoBehaviour
     private Image[] colorBall = null;
     [SerializeField]
     private string[] colorCode = null;
+    private bool nextColor;
     void Start()
     {
+        nextColor = false;
         StartCoroutine("changeColor");
         StartCoroutine("changeGroup"); 
         group[0].SetActive(false);
@@ -22,19 +24,21 @@ public class randomColor : MonoBehaviour
 
     IEnumerator changeGroup()
     {
-        yield return new WaitForSeconds(2f);
         group[0].SetActive(true);
         group[1].SetActive(false);
         group[2].SetActive(false);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitUntil(() => nextColor == true);
+        nextColor = false;
         group[0].SetActive(false);
         group[1].SetActive(true);
         group[2].SetActive(false);
-        yield return new WaitForSeconds(6f);
+        yield return new WaitUntil(() => nextColor == true);
+        nextColor = false;
         group[0].SetActive(false);
         group[1].SetActive(false);
         group[2].SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitUntil(() => nextColor == true);
+        nextColor = false;
         StartCoroutine("changeGroup");
     }
 
@@ -57,6 +61,7 @@ public class randomColor : MonoBehaviour
             target.color = thisColor;
             yield return new WaitForFixedUpdate();
         }
+        nextColor = true;
 
         target.color = random();
         thisColor = target.color;

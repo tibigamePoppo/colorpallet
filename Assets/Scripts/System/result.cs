@@ -20,6 +20,7 @@ public class result : MonoBehaviour
 
     public void showReselt(bool result,Color color)
     {
+        SeManager.Instance.ShotSe(SeType.result);
         if (result == true)
             kekka.sprite = sekai;
         else
@@ -29,6 +30,7 @@ public class result : MonoBehaviour
 
     public void CMShowReselt(bool result, Color color, Color colorA1, Color colorA2)
     {
+        SeManager.Instance.ShotSe(SeType.result);
         if (result == true)
             kekka.sprite = sekai;
         else

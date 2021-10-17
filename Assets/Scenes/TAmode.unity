@@ -1031,6 +1031,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 782622568}
+        m_TargetAssemblyTypeName: buttonClick, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691831557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,6 +1176,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 782622568}
+        m_TargetAssemblyTypeName: buttonClick, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &730601261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1226,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730601258}
   m_CullTransparentMesh: 0
+--- !u!1 &782622567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782622569}
+  - component: {fileID: 782622568}
+  m_Layer: 0
+  m_Name: shotSE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &782622568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782622567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570f889dbdf498e4696188941cc305de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &782622569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782622567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 430.14526, y: 218.09947, z: -137.7874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816743136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1667,8 @@ MonoBehaviour:
   husekai: {fileID: 21300000, guid: a09fd80a7f79e014291fc61242dc8117, type: 3}
   kekka: {fileID: 0}
   resultColor: {fileID: 0}
+  resultColorA1: {fileID: 0}
+  resultColorA2: {fileID: 0}
 --- !u!114 &853391850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,6 +2645,8 @@ MonoBehaviour:
   husekai: {fileID: 21300000, guid: a09fd80a7f79e014291fc61242dc8117, type: 3}
   kekka: {fileID: 328502078}
   resultColor: {fileID: 327465199}
+  resultColorA1: {fileID: 0}
+  resultColorA2: {fileID: 0}
 --- !u!114 &1466553113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,6 +3122,8 @@ MonoBehaviour:
   husekai: {fileID: 21300000, guid: a09fd80a7f79e014291fc61242dc8117, type: 3}
   kekka: {fileID: 0}
   resultColor: {fileID: 0}
+  resultColorA1: {fileID: 0}
+  resultColorA2: {fileID: 0}
 --- !u!114 &1872591671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,6 +3544,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: 
         m_MethodName: changeScene
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Titile
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 782622568}
+        m_TargetAssemblyTypeName: buttonClick, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
