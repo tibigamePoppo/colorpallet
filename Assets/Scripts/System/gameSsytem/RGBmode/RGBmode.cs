@@ -12,10 +12,12 @@ public class RGBmode : MonoBehaviour
     [SerializeField]
     private Text problemText = null;
     private bool isInputButton;
-    public ReactiveProperty<int> round = new ReactiveProperty<int>(1);
+    public ReactiveProperty<int> round = new ReactiveProperty<int>(0);
     private int correctAnswer;
 
     Text correctText;
+    [SerializeField]
+    spinImage spin;
 
     int answerRvalue;
     int answerGvalue;
@@ -33,7 +35,7 @@ public class RGBmode : MonoBehaviour
         correctAnswer = 0;
         result = GameObject.Find("result");
         result_f = GameObject.Find("result_f");
-        correctText = GameObject.Find("correctText").GetComponent<Text>(); ;
+        correctText = GameObject.Find("correctText").GetComponent<Text>();
         result.SetActive(false);
         result_f.SetActive(false);
         Image = GetComponent<randomImage>();
@@ -42,8 +44,9 @@ public class RGBmode : MonoBehaviour
 
     private void makeProblem()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -97,7 +100,7 @@ public class RGBmode : MonoBehaviour
 
     private IEnumerator sendResult(bool value)
     {
-        round.Value++;
+        spin.spin();
         result.GetComponent<result>().showReselt(value, resultColor);
         yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
@@ -107,6 +110,7 @@ public class RGBmode : MonoBehaviour
     {
         if (round.Value == 10)
         {
+            StartCoroutine("soundPlaye");
             result_f.SetActive(true);
             correctText.text = correctAnswer.ToString();
         }
@@ -116,6 +120,15 @@ public class RGBmode : MonoBehaviour
             makeProblem();
         }
         isInputButton = true;
+    }
+    IEnumerator soundPlaye()
+    {
+        yield return new WaitForFixedUpdate();
+        Debug.Log("result音を鳴らした");
+        if (correctAnswer == 10) SeManager.Instance.ShotSe(SeType.perfect);
+        else if (correctAnswer >= 3) SeManager.Instance.ShotSe(SeType.good);
+        else SeManager.Instance.ShotSe(SeType.nogood);
+
     }
 
     public void reset()

@@ -5,5 +5,8 @@ using UnityEngine;
 public enum SeType
 {
     click,
-    result
+    result,
+    perfect,
+    good,
+    nogood
 }

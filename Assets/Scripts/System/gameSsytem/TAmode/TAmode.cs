@@ -30,6 +30,8 @@ public class TAmode : MonoBehaviour
     private GameObject result;
     private GameObject result_f;
     private GameObject result_x;
+    [SerializeField]
+    spinImage spin;
 
     Color resultColor;
     randomImage Image;
@@ -59,8 +61,9 @@ public class TAmode : MonoBehaviour
 
     private void makeProblemRGB()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -80,8 +83,9 @@ public class TAmode : MonoBehaviour
     }
     private void makeProblemHSV()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -138,7 +142,7 @@ public class TAmode : MonoBehaviour
 
     private IEnumerator sendResult(bool value)
     {
-        round.Value++;
+        spin.spin();
         result.GetComponent<result>().showReselt(value, resultColor);
         yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
@@ -149,10 +153,11 @@ public class TAmode : MonoBehaviour
     {
         if (correctAnswer.Value == 10)
         {
-            result_f.SetActive(true);
+            StartCoroutine("soundPlaye");
             StopCoroutine("timeCount");
             ranking(time);
             correctText.text = time.ToString();
+            result_f.SetActive(true);
         }
         else if (FailureAnswer == 3)
         {
@@ -165,6 +170,13 @@ public class TAmode : MonoBehaviour
             makeProblem();
         }
         isInputButton = true;
+    }
+    IEnumerator soundPlaye()
+    {
+        yield return new WaitForFixedUpdate();
+        Debug.Log("result音を鳴らした");
+        if (FailureAnswer == 0) SeManager.Instance.ShotSe(SeType.perfect);
+        else SeManager.Instance.ShotSe(SeType.good);
     }
 
     public void reset()
@@ -182,6 +194,7 @@ public class TAmode : MonoBehaviour
 
     IEnumerator timeCount()
     {
+        Debug.Log(time);
         yield return new WaitForSeconds(1f);
         time++;
         StartCoroutine("timeCount");
@@ -190,27 +203,27 @@ public class TAmode : MonoBehaviour
     private void ranking(int time)
     {
         int temp;//一時的な数字
-        int rank3 = PlayerPrefs.GetInt("SDrank3");
+        int rank3 = PlayerPrefs.GetInt("TArank3");
         if (rank3 < time)
         {
             rank3 = time;
-            int rank2 = PlayerPrefs.GetInt("SDrank2");
+            int rank2 = PlayerPrefs.GetInt("TArank2");
             if (rank2 < rank3)
             {
                 temp = rank2;
                 rank2 = rank3;
                 rank3 = temp;
-                int rank1 = PlayerPrefs.GetInt("SDrank1");
+                int rank1 = PlayerPrefs.GetInt("TArank1");
                 if (rank1 < rank2)
                 {
                     temp = rank1;
                     rank1 = rank2;
                     rank2 = temp;
-                    PlayerPrefs.SetInt("SDrank1", rank1);
+                    PlayerPrefs.SetInt("TArank1", rank1);
                 }
-                PlayerPrefs.SetInt("SDrank2", rank2);
+                PlayerPrefs.SetInt("TArank2", rank2);
             }
-            PlayerPrefs.SetInt("SDrank3", rank3);
+            PlayerPrefs.SetInt("TArank3", rank3);
         }
     }
 }

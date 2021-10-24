@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\UI\Tittle\gameEnd.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\HSVmode\HSVmode.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\RGBmode\RGBmode.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\soundVolume.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\SDmode\SDmode.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\aspectKeeper.cs" />
     <Compile Include="Assets\Scripts\System\colorPallet\changeImageColor.cs" />
@@ -68,9 +69,8 @@
     <Compile Include="Assets\Scripts\UI\Tittle\randomColor.cs" />
     <Compile Include="Assets\Scripts\System\randomImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\optionSystem.cs" />
-    <Compile Include="Assets\Scripts\System\gameSsytem\CMmode\dragImage.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\colorSlider.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\selectMode.cs" />
-    <Compile Include="Assets\Scripts\System\gameSsytem\CMmode\CMmode.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\TAmode\TAmode.cs" />
     <Compile Include="Assets\Scripts\UI\main\spinImage.cs" />
     <Compile Include="Assets\Scripts\System\sound\buttonClick.cs" />
@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\System\colorPallet\colorPallet.cs" />
     <Compile Include="Assets\Scripts\System\sound\SeManager.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\Expanel.cs" />
+    <Compile Include="Assets\Scripts\UI\main\answerImage.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\closeWIndow.cs" />
     <Compile Include="Assets\Scripts\System\sound\SeType.cs" />
     <Compile Include="Assets\Scripts\System\closePanel.cs" />
   </ItemGroup>

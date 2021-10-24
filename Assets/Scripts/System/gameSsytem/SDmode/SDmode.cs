@@ -27,6 +27,8 @@ public class SDmode : MonoBehaviour
 
     private GameObject result;
     private GameObject result_f;
+    [SerializeField]
+    spinImage spin;
 
     Color resultColor;
     randomImage Image;
@@ -54,8 +56,9 @@ public class SDmode : MonoBehaviour
 
     private void makeProblemRGB()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -75,8 +78,9 @@ public class SDmode : MonoBehaviour
     }
     private void makeProblemHSV()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -122,20 +126,23 @@ public class SDmode : MonoBehaviour
         isInputButton = false;
         if (value == answer)
         {
-            StartCoroutine("sendResult", true);
             correctAnswer.Value++;
+            StartCoroutine("sendResult", true);
         }
-        else
-        {
-            ranking(correctAnswer.Value);
-            result_f.SetActive(true);
-            correctText.text = correctAnswer.ToString();
-        }
+        else StartCoroutine("sendResult", false);
+    }
+
+    private IEnumerator finish()
+    {
+        ranking(correctAnswer.Value);
+        yield return new WaitForFixedUpdate();
+        result_f.SetActive(true);
+        correctText.text = correctAnswer.ToString();
     }
 
     private IEnumerator sendResult(bool value)
     {
-        round.Value++;
+        spin.spin();
         result.GetComponent<result>().showReselt(value, resultColor);
         yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
@@ -143,9 +150,16 @@ public class SDmode : MonoBehaviour
 
     public void nextGame()
     {
-        result.SetActive(false);
-        makeProblem();
-        isInputButton = true;
+        if (round.Value != correctAnswer.Value)
+        {
+            StartCoroutine("finish");
+        }
+        else
+        {
+            result.SetActive(false);
+            makeProblem();
+            isInputButton = true;
+        }
     }
 
     public void reset()

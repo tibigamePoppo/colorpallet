@@ -12,10 +12,12 @@ public class HSVmode : MonoBehaviour
     private bool isInputButton;
     [SerializeField]
     private Text problemText = null;
-    public ReactiveProperty<int> round = new ReactiveProperty<int>(1);
+    public ReactiveProperty<int> round = new ReactiveProperty<int>(0);
     private int correctAnswer;
 
     Text correctText;
+    [SerializeField]
+    spinImage spin;
 
     int answerHvalue;
     int answerSvalue;
@@ -42,8 +44,9 @@ public class HSVmode : MonoBehaviour
 
     private void makeProblem()
     {
-        Image.Start();
+        round.Value++;
         answer = Random.Range(0, 4);
+        Image.random(answer);
 
         for (int i = 0; i < 4; i++)
         {
@@ -97,7 +100,7 @@ public class HSVmode : MonoBehaviour
 
     private IEnumerator sendResult(bool value)
     {
-        round.Value++;
+        spin.spin();
         result.GetComponent<result>().showReselt(value, resultColor);
         yield return new WaitForSeconds(1.2f);
         result.SetActive(true);
@@ -107,6 +110,7 @@ public class HSVmode : MonoBehaviour
     {
         if (round.Value == 10)
         {
+            StartCoroutine("soundPlaye");
             result_f.SetActive(true);
             correctText.text = correctAnswer.ToString();
         }
@@ -117,8 +121,16 @@ public class HSVmode : MonoBehaviour
         }
         isInputButton = true;
     }
+    IEnumerator soundPlaye()
+    {
+        yield return new WaitForFixedUpdate();
+        Debug.Log("result音を鳴らした");
+        if (correctAnswer == 10) SeManager.Instance.ShotSe(SeType.perfect);
+        else if (correctAnswer >= 3) SeManager.Instance.ShotSe(SeType.good);
+        else SeManager.Instance.ShotSe(SeType.nogood);
+    }
 
-    public void reset()
+        public void reset()
     {
         round.Value = 0;
         correctAnswer = 0;

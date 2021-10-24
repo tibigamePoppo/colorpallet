@@ -9,14 +9,14 @@ public class roundText : MonoBehaviour
     HSVmode HSV;
     RGBmode RGB;
     TAmode TA;
-    CMmode CM;
+    SDmode SD;
     Text text;
     private enum Mode 
     {
         HSV,
         RGB,
         TA,
-        CM
+        SD
     }
     [SerializeField]
     Mode mode;
@@ -39,10 +39,10 @@ public class roundText : MonoBehaviour
             TA = GameObject.Find("gameSystem").GetComponent<TAmode>();
             TA.correctAnswer.Subscribe(correctAnswer => showText(correctAnswer));
         }
-        else if (mode == Mode.CM)
+        else if (mode == Mode.SD)
         {
-            CM = GameObject.Find("gameSystem").GetComponent<CMmode>();
-            CM.round.Subscribe(correctAnswer => showText(correctAnswer));
+            SD = GameObject.Find("gameSystem").GetComponent<SDmode>();
+            SD.round.Subscribe(correctAnswer => showText(correctAnswer));
         }
     }
 

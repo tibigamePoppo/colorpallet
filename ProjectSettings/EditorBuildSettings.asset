@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SDmode.unity
     guid: 91b3d8498de1ad745b08638776e89d5c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CMmode.unity
     guid: 2f0b1eb9c6ebfbb46acdd9817ce50f38
   m_configObjects: {}
