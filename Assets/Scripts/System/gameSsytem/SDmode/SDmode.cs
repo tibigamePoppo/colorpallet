@@ -113,11 +113,11 @@ public class SDmode : MonoBehaviour
 
     private void inputTextRGB()
     {
-        problemText.text = ("Rが" + answerRvalue + "でGが" + answerGvalue + "でBが" + answerBvalue + "の色ってなんじゃったっけ？");
+        problemText.text = ("Rが" + answerRvalue + "でGが" + answerGvalue + "でBが" + answerBvalue + "の色ってなんじゃっけ？");
     }
     private void inputTextHSV()
     {
-        problemText.text = ("Hが" + answerHvalue + "でSが" + answerSvalue + "でVが" + answerVvalue + "の色ってなんじゃったっけ？");
+        problemText.text = ("Hが" + answerHvalue + "でSが" + answerSvalue + "でVが" + answerVvalue + "の色ってなんじゃっけ？");
     }
 
     public void Onclick(int value)

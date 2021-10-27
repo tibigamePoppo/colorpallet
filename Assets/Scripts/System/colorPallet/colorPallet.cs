@@ -60,7 +60,7 @@ public class colorPallet : MonoBehaviour
         HValueText.text = change360Value(HValue.value).ToString();
         SValueText.text = change100Value(SValue.value).ToString();
         VValueText.text = change100Value(VValue.value).ToString();
-
+        /*
         RValueText.text = change255Value(colorImage.Value.r).ToString();
         GValueText.text = change255Value(colorImage.Value.g).ToString();
         BValueText.text = change255Value(colorImage.Value.b).ToString();
@@ -68,6 +68,7 @@ public class colorPallet : MonoBehaviour
         RValue.value = colorImage.Value.r;
         GValue.value = colorImage.Value.g;
         BValue.value = colorImage.Value.b;
+        */
     }
 
 

@@ -76,7 +76,7 @@ public class HSVmode : MonoBehaviour
 
     private void inputText()
     {
-        problemText.text = ("Hが" + answerHvalue + "でSが" + answerSvalue + "でVが" + answerVvalue + "の色ってなんじゃったっけ？");
+        problemText.text = ("Hが" + answerHvalue + "でSが" + answerSvalue + "でVが" + answerVvalue + "の色ってなんじゃっけ？");
     }
 
     public void Onclick(int value)

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Expanel : MonoBehaviour
 {
-    Animator anime;
+    //Animator anime;
     void Start()
     {
-        anime = GetComponent<Animator>();
-        this.gameObject.SetActive(false);
+        //anime = GetComponent<Animator>();
     }
 
     public void OnClick()
@@ -21,11 +20,5 @@ public class Expanel : MonoBehaviour
     {
         yield return new WaitUntil(() => Input.anyKey);
         this.gameObject.SetActive(false);
-    }
-
-    private void OnEnable()
-    {
-        if (anime == null) return;
-        anime.SetTrigger("open");
     }
 }

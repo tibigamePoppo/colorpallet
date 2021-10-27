@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,14 +53,12 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\UI\Tittle\gameEnd.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\HSVmode\HSVmode.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\RGBmode\RGBmode.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\soundVolume.cs" />
     <Compile Include="Assets\Scripts\System\gameSsytem\SDmode\SDmode.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\colorHforImage.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\aspectKeeper.cs" />
     <Compile Include="Assets\Scripts\System\colorPallet\changeImageColor.cs" />
     <Compile Include="Assets\Scripts\System\result.cs" />
@@ -76,12 +74,26 @@
     <Compile Include="Assets\Scripts\System\sound\buttonClick.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\sceneLoad.cs" />
     <Compile Include="Assets\Scripts\System\colorPallet\colorPallet.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\PopUp.cs" />
     <Compile Include="Assets\Scripts\System\sound\SeManager.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\Expanel.cs" />
     <Compile Include="Assets\Scripts\UI\main\answerImage.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\PopButton.cs" />
     <Compile Include="Assets\Scripts\UI\Tittle\closeWIndow.cs" />
     <Compile Include="Assets\Scripts\System\sound\SeType.cs" />
     <Compile Include="Assets\Scripts\System\closePanel.cs" />
+    <Compile Include="Assets\Scripts\UI\Tittle\spinUp.cs" />
+    <Compile Include="Assets\Scripts\Admob\AdMob.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds_version-6.1.2_manifest.txt" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Common.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.iOS.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Core.dll" />
+    <None Include="Assets\GoogleMobileAds\link.xml" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll" />
+    <None Include="Assets\GoogleMobileAds\GoogleMobileAds.Android.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -296,6 +308,21 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Users\vivio\Desktop\unity\2020.3.19f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Core">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Unity">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMobileAds.Common">
+      <HintPath>Assets\GoogleMobileAds\GoogleMobileAds.Common.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Users\vivio\Desktop\unity\2020.3.19f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -743,9 +770,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{47059CB9-9635-F957-8177-858976D4B486}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="UniRx.csproj">
       <Project>{761C85B7-7600-5A64-16BC-9ADEAEA5AE6F}</Project>
       <Name>UniRx</Name>
+    </ProjectReference>
+    <ProjectReference Include="GoogleMobileAds.Editor.csproj">
+      <Project>{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}</Project>
+      <Name>GoogleMobileAds.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

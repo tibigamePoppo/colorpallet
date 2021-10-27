@@ -14,13 +14,18 @@ public class result : MonoBehaviour
     [SerializeField]
     private Image resultColor = null;
 
-    public void showReselt(bool result,Color color)
+    public void showReselt(bool result, Color color)
     {
-        SeManager.Instance.ShotSe(SeType.result);
         if (result == true)
+        {
+            SeManager.Instance.ShotSe(SeType.result);
             kekka.sprite = sekai;
+        }
         else
+        {
+            SeManager.Instance.ShotSe(SeType.nogood);
             kekka.sprite = husekai;
+        }
         resultColor.color = color;
     }
 }

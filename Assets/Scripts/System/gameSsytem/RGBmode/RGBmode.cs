@@ -73,7 +73,7 @@ public class RGBmode : MonoBehaviour
 
     private void inputText()
     {
-        problemText.text = ("Rが" + answerRvalue + "でGが" + answerGvalue + "でBが" + answerBvalue + "の色ってなんじゃったっけ？");
+        problemText.text = ("Rが" + answerRvalue + "でGが" + answerGvalue + "でBが" + answerBvalue + "の色ってなんじゃっけ？");
     }
 
     public void Onclick(int value)

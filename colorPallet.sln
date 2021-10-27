@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Examples", "UniRx.Examples.csproj", "{6FA25A24-07DC-6E5F-70B2-6616867D8231}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{47059CB9-9635-F957-8177-858976D4B486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMobileAds.Editor", "GoogleMobileAds.Editor.csproj", "{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{6FA25A24-07DC-6E5F-70B2-6616867D8231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FA25A24-07DC-6E5F-70B2-6616867D8231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FA25A24-07DC-6E5F-70B2-6616867D8231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47059CB9-9635-F957-8177-858976D4B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47059CB9-9635-F957-8177-858976D4B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47059CB9-9635-F957-8177-858976D4B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47059CB9-9635-F957-8177-858976D4B486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873E23B4-41CC-B2FD-2BB8-4A9EC8CDF301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
